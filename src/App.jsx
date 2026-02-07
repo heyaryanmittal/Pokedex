@@ -77,7 +77,7 @@ function App() {
     <div className="app-container">
       <header className="app-branding">
         <h1 className="app-title">
-          <img src="/pokeball.svg" alt="Pokeball" className="title-icon" />
+          <img src={`${import.meta.env.BASE_URL}pokeball.svg`} alt="Pokeball" className="title-icon" />
           Pokédex
         </h1>
       </header>
