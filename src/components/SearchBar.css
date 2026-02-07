@@ -1,0 +1,84 @@
+.search-bar-container {
+    position: relative;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 4px 8px rgba(255, 204, 0, 0.3);
+}
+
+.search-button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #ffcc00;
+    color: #3b4cca;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-button:hover {
+    background-color: #ffdb4d;
+    transform: translateY(-2px);
+}
+
+.search-button:active {
+    transform: translateY(0);
+}
+
+.suggestions-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-top: 5px;
+    padding: 0;
+    list-style: none;
+    z-index: 1000;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.suggestions-list li {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-transform: capitalize;
+}
+
+.suggestions-list li:hover {
+    background-color: #f8f8f8;
+    color: #3b4cca;
+    font-weight: 500;
+}
+
+.suggestions-list li:last-child {
+    border-bottom: none;
+}
