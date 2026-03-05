@@ -23,7 +23,7 @@ A modern, responsive, and interactive Pokédex application built with React and 
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/pokedex.git
+    git clone https://github.com/heyaryanmittal/pokedex.git
     ```
 2.  Navigate to the project directory:
     ```bash
