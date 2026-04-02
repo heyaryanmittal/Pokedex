@@ -46,6 +46,10 @@ function App() {
     setRegion('');
 
     try {
+      const exists = allPokemon.length === 0 || allPokemon.some(p => p.name === query.toLowerCase());
+      if (!exists) {
+        throw new Error('Pokemon not found!');
+      }
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${query.toLowerCase()}`);
       if (!response.ok) {
         throw new Error('Pokemon not found!');

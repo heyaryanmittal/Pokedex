@@ -1,5 +1,5 @@
 .card-container {
-    width: 90vw;
+    width: 90%;
     height: 70vh;
     max-height: 550px;
     max-width: 1000px;
@@ -178,25 +178,32 @@
         flex-direction: column;
         height: auto;
         min-height: 85vh;
-        width: 95vw;
+        max-height: none;
+        width: 95%;
         padding: 15px;
-        overflow-y: auto;
-
+        overflow: visible;
     }
 
     .image-wrapper {
-        width: 25vh;
-        height: 25vh;
+        width: 200px;
+        height: 200px;
         margin-bottom: 10px;
         flex: 0 0 auto;
     }
 
-    .card-header,
+    .card-header {
+        text-align: center;
+        width: 100%;
+    }
+
     .info-wrapper {
         text-align: center;
         align-items: center;
         width: 100%;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
     }
 
     .stats-grid {
@@ -204,5 +211,6 @@
         text-align: left;
         max-height: none;
         box-sizing: border-box;
+        overflow: visible;
     }
 }

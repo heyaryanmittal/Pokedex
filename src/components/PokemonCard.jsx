@@ -9,6 +9,8 @@ const PokemonCard = ({ data, region }) => {
     const heightInFeet = (height * 0.1 * 3.28084).toFixed(2);
     const weightInKg = (weight * 0.1).toFixed(1);
 
+    const abilityNames = abilities.map(a => a.ability.name);
+
     return (
         <div className="card-container">
             <div className="image-wrapper">
@@ -16,6 +18,10 @@ const PokemonCard = ({ data, region }) => {
                     src={sprites.other['official-artwork'].front_default || sprites.front_default}
                     alt={name}
                     className="pokemon-image"
+                    onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = `${import.meta.env.BASE_URL}pokeball.svg`;
+                    }}
                 />
             </div>
 
@@ -37,9 +43,9 @@ const PokemonCard = ({ data, region }) => {
                     <div className="stat-abilities">
                         <span className="stat-label">Abilities:</span>
                         <ul className="ability-list">
-                            {abilities.map((abilityInfo) => (
-                                <li key={abilityInfo.ability.name} className="ability-item">
-                                    {abilityInfo.ability.name}
+                            {abilityNames.map((abilityName, index) => (
+                                <li key={index} className="ability-item">
+                                    {abilityName}
                                 </li>
                             ))}
                         </ul>
@@ -47,7 +53,7 @@ const PokemonCard = ({ data, region }) => {
                     <div className="stat-abilities">
                         <span className="stat-label">Moves:</span>
                         <ul className="ability-list">
-                            {data.moves && data.moves.slice(0, 4).map((moveInfo) => (
+                            {data.moves && data.moves.slice(0, 6).map((moveInfo) => (
                                 <li key={moveInfo.move.name} className="ability-item move-item">
                                     {moveInfo.move.name}
                                 </li>
